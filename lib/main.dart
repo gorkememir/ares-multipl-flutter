@@ -20,10 +20,22 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Welcome to Flutter'),
           ),
-          body: Column(children: const [
+          body: Column(children: [
             res_row('gold'),
             res_row('plant'),
-            res_row('heat')
+            res_row('heat'),
+            Row(
+              children: [
+                res_row('card'),
+                res_row('steel'),
+              ],
+            ),
+            Row(
+              children: [
+                res_row('titanium'),
+                res_row('card'),
+              ],
+            )
           ])),
     );
   }
