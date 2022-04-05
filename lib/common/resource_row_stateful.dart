@@ -2,34 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 
-class res_row extends StatefulWidget {
+class ResRow extends StatefulWidget {
   final String icon;
-
-  const res_row(this.icon);
-
-  @override
-  State<res_row> createState() => _res_rowState();
-}
-
-class _res_rowState extends State<res_row> {
-  int _income = 0;
+  int income = 0;
+  bool status = true;
   int _stock = 0;
   List<bool> isSelected = [true, false];
-  bool status = true;
+
+  ResRow(this.icon, {Key? key}) : super(key: key);
+
+  @override
+  State<ResRow> createState() => _ResRowState();
+}
+
+class _ResRowState extends State<ResRow> {
 
 
   void _incrementIncome() {
     setState(() {
-      _income++;
+      widget.income++;
     });
   }
 
   _changeStockBy(int amount) {
-    status == true ?
+    widget.status == true ?
       setState(() {
-        _stock += amount;
+        widget._stock += amount;
       }) : setState(() {
-        _stock -= amount;
+        widget._stock -= amount;
       });
   }
 
@@ -48,7 +48,7 @@ class _res_rowState extends State<res_row> {
             iconSize: 50,
             onPressed: _incrementIncome,
           ),
-          Text(_income.toString()),
+          Text(widget.income.toString()),
           IconButton(
             icon: Image.asset('assets/bronze_cube.png'),
             iconSize: 50,
@@ -64,7 +64,7 @@ class _res_rowState extends State<res_row> {
             iconSize: 50,
             onPressed: () => _changeStockBy(10),
           ),
-          Text(_stock.toString()),
+          Text(widget._stock.toString()),
           FlutterSwitch(
             activeText: 'Earn',
             inactiveText: 'Spend',
@@ -72,15 +72,15 @@ class _res_rowState extends State<res_row> {
             inactiveColor: Colors.redAccent,
             width: 105.0,
             height: 45.0,
-            valueFontSize: 20.0,
+            valueFontSize: 15.0,
             toggleSize: 45.0,
-            value: status,
+            value: widget.status,
             borderRadius: 30.0,
             padding: 5.0,
             showOnOff: true,
             onToggle: (val) {
               setState(() {
-                status = val;
+                widget.status = val;
               });
             },
           ),
