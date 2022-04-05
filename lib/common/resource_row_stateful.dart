@@ -17,10 +17,6 @@ class ResRow extends StatefulWidget {
 
 class _ResRowState extends State<ResRow> {
 
-  getIncome() {
-    return this._income;
-  }
-
   void _incrementIncome() {
     setState(() {
       widget.income++;
