@@ -2,21 +2,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 
-class res_row extends StatefulWidget {
+class ResRow extends StatefulWidget {
   final String icon;
 
-  const res_row(this.icon);
+  const ResRow(this.icon);
 
   @override
-  State<res_row> createState() => _res_rowState();
+  State<ResRow> createState() => _ResRowState();
+
 }
 
-class _res_rowState extends State<res_row> {
+class _ResRowState extends State<ResRow> {
   int _income = 0;
   int _stock = 0;
   List<bool> isSelected = [true, false];
   bool status = true;
 
+  getIncome() {
+    return this._income;
+  }
 
   void _incrementIncome() {
     setState(() {
@@ -88,3 +92,4 @@ class _res_rowState extends State<res_row> {
     );
   }
 }
+

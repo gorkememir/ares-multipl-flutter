@@ -4,6 +4,7 @@
 
 import 'package:ares_multipl_flutter/common/resource_row_stateful.dart';
 import 'package:flutter/material.dart';
+import 'common/reg_row.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ResRow gold_row = ResRow('gold');
     return MaterialApp(
       title: 'Welcome to Flutter',
       home: Scaffold(
@@ -21,22 +23,23 @@ class MyApp extends StatelessWidget {
             title: const Text('Welcome to Flutter'),
           ),
           body: Column(children: [
-            res_row('gold'),
-            res_row('plant'),
-            res_row('heat'),
+            gold_row,
+            ResRow('plant'),
+            ResRow('heat'),
             Row(
               children: [
-                res_row('card'),
-                res_row('steel'),
+                RegRow('card'),
+                RegRow('steel'),
               ],
             ),
             Row(
               children: [
-                res_row('titanium'),
-                res_row('card'),
+                RegRow('titanium'),
+                RegRow('card'),
               ],
             )
-          ])),
+          ])
+      ),
     );
   }
 }
