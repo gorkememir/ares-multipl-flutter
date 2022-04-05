@@ -11,6 +11,17 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
+  static ResRow goldRow = ResRow('gold');
+  static ResRow plantRow = ResRow('plant');
+  static ResRow heatRow = ResRow('heat');
+  static ResRow cardRow = ResRow('card');
+  static ResRow steelRow = ResRow('steel');
+  static ResRow titaniumRow = ResRow('titanium');
+  static ResRow trRow = ResRow('crown');
+
+  produce () {
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,22 +32,53 @@ class MyApp extends StatelessWidget {
             title: const Text('Welcome to Flutter'),
           ),
           body: Column(children: [
-            res_row('gold'),
-            res_row('plant'),
-            res_row('heat'),
+            goldRow,
+            plantRow,
+            heatRow,
             Row(
               children: [
-                res_row('card'),
-                res_row('steel'),
+                cardRow,
+                steelRow,
               ],
             ),
             Row(
               children: [
-                res_row('titanium'),
-                res_row('card'),
+                titaniumRow,
+                trRow,
               ],
-            )
-          ])),
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Stack(
+                children: <Widget>[
+                  Positioned.fill(
+                    child: Container(
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: <Color>[
+                            Colors.greenAccent,
+                            Colors.lightGreen,
+                            Colors.green,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                      padding: const EdgeInsets.all(30.0),
+                      primary: Colors.white,
+                      textStyle: const TextStyle(fontSize: 20),
+                    ),
+                    onPressed: () {},
+                    child: const Text('Produce!'),
+                  ),
+                ],
+              ),
+            ),
+          ])
+      ),
     );
+
   }
 }
