@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
   static ResRow goldRow = ResRow('gold');
   static ResRow plantRow = ResRow('plant');
   static ResRow heatRow = ResRow('heat');
-  static ResRow cardRow = ResRow('card');
-  static ResRow steelRow = ResRow('steel');
-  static ResRow titaniumRow = ResRow('titanium');
-  static ResRow trRow = ResRow('crown');
+  static RegRow cardRow = RegRow('card', 0xffadd8e6);
+  static RegRow steelRow = RegRow('steel', 0xffc4a484);
+  static RegRow titaniumRow = RegRow('titanium', 0xff949494);
+  static RegRow trRow = RegRow('crown', 0xffffd699);
 
   produce () {
 

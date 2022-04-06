@@ -35,7 +35,8 @@ class _ResRowState extends State<ResRow> {
   @override
   Widget build(BuildContext context) {
     return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           IconButton(
             icon: Image.asset('''assets/'''+widget.icon+'''.png'''''),
